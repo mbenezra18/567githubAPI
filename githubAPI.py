@@ -22,23 +22,26 @@ def get_repos(user_id):
         except AttributeError:
             print('Error: This user does not have any repositories.')
             return []
-        return repos
+    return repos
 
 
 def retrieve_commits(user_id, repository):
 
     repo_commits = requests.get('https://api.github.com/repos/' + user_id + '/' + repository + 'commits')
-    pushTo_json = json.loads(repo_commits.text)
+    push_to_json = json.loads(repo_commits.text)
 
-    return len(pushTo_json)
+    return len(push_to_json)
 
 
 def main():
 
     user_id = input("Please input a GitHub username:")
 
-    repos = get_repos(user_id)
+    repositories = get_repos(user_id)
 
-    if len(repos) > 0:
-       for i in repos:
+    for repos in repositories:
             print("Repository: " + repos + "Number of Commits: " + str(retrieve_commits(user_id, repos)))
+
+
+if __name__ == "__main__":
+    main()
