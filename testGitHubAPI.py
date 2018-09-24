@@ -39,8 +39,3 @@ class TestGitHubAPI(unittest.TestCase):
         self.assertEqual(get_repos("aervnoDNJsdvn"), [])
         self.assertEqual(get_repos("awnonebjnivk a"), [])
         self.assertEqual(get_repos("svnsna egv n "), [])
-
-
-'''if __name__ == '__main__':
-    print('Running Tests:')
-    unittest.main()'''
