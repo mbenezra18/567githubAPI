@@ -21,8 +21,8 @@ class TestGitHubAPI(unittest.TestCase):
         self.assertIn('threads-of-life', repos)
 
     def test_2_Repo(self):
-        repos = get_repos('mbenezra18')
-        self.assertEqual(len(repos), 5, "User 'mbenezra18' has 5 repositories")
+        repos = get_repos('Mbenezra18')
+        self.assertEqual(len(repos), 5, "User 'Mbenezra18' has 5 repositories")
         self.assertIn('SSW215', repos)
         self.assertIn('SSW-567', repos)
         self.assertIn('Triangle-SSW567', repos)
@@ -30,7 +30,7 @@ class TestGitHubAPI(unittest.TestCase):
         self.assertIn('567githubAPI', repos)
 
     def test_3_Commits(self):
-        self.assertGreaterEqual(retrieve_commits('mbenezra18', 'SSW215'), 1)
+        self.assertGreaterEqual(retrieve_commits('Mbenezra18', 'SSW215'), 1)
 
     def test_4_Commits(self):
         self.assertGreaterEqual(retrieve_commits('richkempinski', 'threads_of_life'), 1)

@@ -13,14 +13,15 @@ import json
 def get_repos(user_id):
 
     r = requests.get('https://api.github.com/users/' + user_id + '/repos')
-    repos = []
     repos_info = json.loads(r.text)
+
+    repos = []
 
     for i in repos_info:
         try:
             repos += [i.get('name')]
         except AttributeError:
-            print('Error: This user does not have any repositories.')
+            print('Error: Could not locate any repositories for this user.')
             return []
     return repos
 
@@ -35,8 +36,8 @@ def retrieve_commits(user_id, repository):
 
 def main():
 
-    user_id = input("Please input a GitHub username:")
-
+    user_id = input("Please input a GitHub username: ")
+    print("Username: " + user_id)
     repositories = get_repos(user_id)
 
     for repos in repositories:
