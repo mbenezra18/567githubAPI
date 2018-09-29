@@ -27,7 +27,7 @@ def get_repos(user_id):
 
 def retrieve_commits(user_id, repository):
 
-    repo_commits = requests.get('https://api.github.com/repos/' + user_id + '/' + repository + 'commits')
+    repo_commits = requests.get('https://api.github.com/repos/' + user_id + '/' + repository + '/commits')
     push_to_json = json.loads(repo_commits.text)
 
     return len(push_to_json)
