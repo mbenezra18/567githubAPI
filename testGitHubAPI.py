@@ -14,7 +14,7 @@ class TestGitHubAPI(unittest.TestCase):
 
     def test_1_Repo(self):
         repos = get_repos('richkempinski')
-        self.assertEqual(len(repos), 4, "User 'richkempinski' has 4 repositories")
+        self.assertGreaterEqual(len(repos), 4, "User 'richkempinski' has 4 repositories")
         self.assertIn('hellogitworld', repos)
         self.assertIn('helloworld', repos)
         self.assertIn('Project1', repos)
@@ -22,7 +22,7 @@ class TestGitHubAPI(unittest.TestCase):
 
     def test_2_Repo(self):
         repos = get_repos('Mbenezra18')
-        self.assertEqual(len(repos), 5, "User 'Mbenezra18' has 5 repositories")
+        self.assertGreaterEqual(len(repos), 5, "User 'Mbenezra18' has 5 repositories")
         self.assertIn('SSW215', repos)
         self.assertIn('SSW-567', repos)
         self.assertIn('Triangle-SSW567', repos)
