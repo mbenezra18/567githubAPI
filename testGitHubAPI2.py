@@ -15,7 +15,7 @@ class MockGitHubAPI(unittest.TestCase):
         mock_repo_names.return_value = ['567-hw2a', 'SSW-567', 'python-gedcom', 'SSW-567', 'SSW215', 'Triangle-SSW567']
 
         repos = get_repos('Mbenezra18')
-        self.assertGreaterEqual(len(repos), 5, "User 'Mbenezra18' has 6 repositories")
+        self.assertGreaterEqual(len(repos), 6, "User 'Mbenezra18' has 6 repositories")
         self.assertIn('SSW215', repos)
         self.assertIn('SSW-567', repos)
         self.assertIn('Triangle-SSW567', repos)
